@@ -1,0 +1,245 @@
+[
+  {
+    "slug": "haigreeva-meadows",
+    "name": "Haigreeva Meadows",
+    "tagline": "Where Every Home Becomes a Legacy.",
+    "type": "Residential Apartments",
+    "status": "Ongoing",
+    "location": "Mahantesh Nagar, Belagavi, Karnataka",
+    "floors": "G+8",
+    "units": "1 BHK & 2 BHK Premium Residences",
+    "penthouse": "2 Exclusive Duplex Penthouses (4th+5th Floor)",
+    "price": "₹52 Lac*",
+    "priceLabel": "Starting from",
+    "builtup": "1578 sqft",
+    "carpet": "1172 sqft",
+    "heroImages": [
+      "/images/haigreeva-hero-1.jpg",
+      "/images/haigreeva-hero-2.jpg",
+      "/images/haigreeva-hero-3.jpg"
+    ],
+    "heroVideos": [
+      "/images/haigreeva-clip-1.mp4",
+      "/images/haigreeva-clip-2.mp4",
+      "/images/haigreeva-clip-3.mp4"
+    ],
+    "about": "To make your dream come true, Haigreeva Meadows is a fine collection of 2 BHK homes spread across a delightful property in Mahantesh Nagar. Designed to turn your wishes into your lifestyle.",
+    "highlights": [
+      "G+8 prestige structure",
+      "1 BHK Classic & 2 BHK Premium residences",
+      "2 Exclusive Duplex Penthouses with private terrace",
+      "Earthquake-resistant RCC structure",
+      "100% Vastu compliant",
+      "Garden-facing homes"
+    ],
+    "units": [
+      {
+        "type": "1 BHK Classic",
+        "size": "625 sqft",
+        "price": "₹52 Lac*",
+        "description": "Elegantly designed 1 BHK residences perfect for young professionals and small families. Maximum space utilization with premium finishes.",
+        "featured": false
+      },
+      {
+        "type": "2 BHK Premium",
+        "size": "892 sqft",
+        "price": "₹72 Lac*",
+        "description": "Spacious 2 BHK homes designed for modern family living. Large windows, ventilated rooms, and premium specifications throughout.",
+        "featured": true
+      },
+      {
+        "type": "Duplex Penthouse",
+        "size": "1578 sqft built-up",
+        "price": "On Request",
+        "description": "Exclusive duplex penthouse spanning the 4th and 5th floors. Private open terrace, panoramic views, and unparalleled luxury.",
+        "featured": false
+      }
+    ],
+    "floorPlans": [
+      {
+        "name": "4th Floor — Duplex Lower",
+        "image": "/images/floorplan-4th.png"
+      },
+      {
+        "name": "5th Floor — Duplex Upper",
+        "image": "/images/floorplan-5th.png"
+      },
+      {
+        "name": "Penthouse Terrace",
+        "image": "/images/floorplan-terrace.png"
+      }
+    ],
+    "amenities": [
+      { "name": "CCTV Surveillance", "icon": "camera" },
+      { "name": "Premium Lifts", "icon": "elevator" },
+      { "name": "Power Backup", "icon": "zap" },
+      { "name": "100% Vastu Compliant", "icon": "compass" },
+      { "name": "Garden Facing", "icon": "tree" },
+      { "name": "NH Proximity", "icon": "map-pin" },
+      { "name": "Covered Parking", "icon": "truck" },
+      { "name": "Earthquake Resistant", "icon": "shield" }
+    ],
+    "specifications": {
+      "Structure": [
+        "RCC frame with Ultratech Cement",
+        "Earthquake-resistant design",
+        "JSW Neo 5500 Steel reinforcement",
+        "Bitufix waterproofing treatment"
+      ],
+      "Walls": [
+        "External: 9\" red brick masonry",
+        "Internal: 4\" red brick masonry",
+        "Sand-faced plaster finish",
+        "POP ceiling finish"
+      ],
+      "Doors": [
+        "Two-side laminate main door",
+        "Night latch + safety chain + peephole",
+        "Flush internal doors",
+        "Cylindrical lock set"
+      ],
+      "Windows": [
+        "3-track UPVC with mosquito mesh",
+        "2-track UPVC sliding for terrace",
+        "Granite / Marble window sills",
+        "MS safety grills"
+      ]
+    },
+    "gallery": [
+      "/images/gallery-1.jpg",
+      "/images/gallery-4.jpg"
+    ],
+    "location": {
+      "address": "Mahantesh Nagar, Belagavi, Karnataka 590001",
+      "mapPoints": [
+        "2 min from National Highway 4",
+        "Walking distance to public garden",
+        "5 min to Belagavi city centre",
+        "10 min to Belagavi Airport"
+      ]
+    },
+    "contact": {
+      "name": "Shubham Patil",
+      "phone": "7707077708",
+      "email": "info@neevararealty.com",
+      "website": "www.neevararealty.com"
+    },
+    "rera": "PRM/KA/RERA/1251/309/PR/230109"
+  },
+  {
+    "slug": "serene-vistas",
+    "name": "Serene Vistas",
+    "tagline": "Elevate Your Everyday.",
+    "type": "Premium Villas",
+    "status": "Upcoming",
+    "location": "Tilakwadi, Belagavi, Karnataka",
+    "floors": "G+2",
+    "units": "3 BHK & 4 BHK Luxury Villas",
+    "penthouse": "",
+    "price": "₹1.2 Cr*",
+    "priceLabel": "Starting from",
+    "builtup": "2400 sqft",
+    "carpet": "1800 sqft",
+    "heroImages": [
+      "/images/serene-hero-1.jpg",
+      "/images/serene-hero-2.jpg",
+      "/images/serene-hero-3.jpg"
+    ],
+    "about": "Serene Vistas offers a collection of meticulously designed luxury villas in the heart of Tilakwadi. Each villa is a sanctuary of peace, privacy, and premium living.",
+    "highlights": [
+      "G+2 independent villas",
+      "3 BHK & 4 BHK configurations",
+      "Private garden & terrace",
+      "Modular kitchen with quartz counter",
+      "Home automation ready",
+      "24x7 security & gated community"
+    ],
+    "units": [],
+    "floorPlans": [],
+    "amenities": [
+      { "name": "Gated Community", "icon": "shield" },
+      { "name": "Private Garden", "icon": "tree" },
+      { "name": "24x7 Security", "icon": "camera" },
+      { "name": "Home Automation", "icon": "zap" },
+      { "name": "Covered Parking", "icon": "truck" },
+      { "name": "Rainwater Harvesting", "icon": "droplet" },
+      { "name": "Solar Panels", "icon": "sun" },
+      { "name": "Clubhouse Access", "icon": "home" }
+    ],
+    "specifications": {
+      "Structure": [],
+      "Walls": [],
+      "Doors": [],
+      "Windows": []
+    },
+    "gallery": [],
+    "location": {
+      "address": "Tilakwadi, Belagavi, Karnataka",
+      "mapPoints": []
+    },
+    "contact": {
+      "name": "Shubham Patil",
+      "phone": "7707077708",
+      "email": "info@neevararealty.com",
+      "website": "www.neevararealty.com"
+    },
+    "rera": ""
+  },
+  {
+    "slug": "golden-acre",
+    "name": "Golden Acre",
+    "tagline": "Where Nature Meets Luxury.",
+    "type": "Premium Plots",
+    "status": "Ongoing",
+    "location": "Khanapur Road, Belagavi, Karnataka",
+    "floors": "",
+    "units": "Premium Residential Plots",
+    "penthouse": "",
+    "price": "₹35 Lac*",
+    "priceLabel": "Per plot starting",
+    "builtup": "1200 sqft plots",
+    "carpet": "",
+    "heroImages": [
+      "/images/golden-hero-1.jpg",
+      "/images/golden-hero-2.jpg",
+      "/images/golden-hero-3.jpg"
+    ],
+    "about": "Golden Acre presents premium residential plots on Khanapur Road, offering the perfect blend of nature and urban convenience. Build your dream home in Belagavi's most sought-after locality.",
+    "highlights": [
+      "Premium residential plots",
+      "1200 sqft and above",
+      "DTCP approved layout",
+      "Wide tar roads with footpath",
+      "Underground drainage",
+      "Street lights & landscaping"
+    ],
+    "units": [],
+    "floorPlans": [],
+    "amenities": [
+      { "name": "DTCP Approved", "icon": "shield" },
+      { "name": "Wide Roads", "icon": "map-pin" },
+      { "name": "Street Lighting", "icon": "sun" },
+      { "name": "Underground Drainage", "icon": "droplet" },
+      { "name": "Water Connection", "icon": "droplet" },
+      { "name": "Park & Play Area", "icon": "tree" }
+    ],
+    "specifications": {
+      "Structure": [],
+      "Walls": [],
+      "Doors": [],
+      "Windows": []
+    },
+    "gallery": [],
+    "location": {
+      "address": "Khanapur Road, Belagavi, Karnataka",
+      "mapPoints": []
+    },
+    "contact": {
+      "name": "Shubham Patil",
+      "phone": "7707077708",
+      "email": "info@neevararealty.com",
+      "website": "www.neevararealty.com"
+    },
+    "rera": ""
+  }
+]

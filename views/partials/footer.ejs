@@ -1,0 +1,45 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">NEEVARA</a>
+        <p class="footer-tagline">Crafting Homes, Creating Legacies</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="/">Home</a>
+        <a href="/#projects">Projects</a>
+        <a href="/#philosophy">Philosophy</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <div class="footer-projects">
+        <h4>Projects</h4>
+        <% (typeof projects !== 'undefined' ? projects : []).forEach(function(p) { %>
+          <a href="/projects/<%= p.slug %>"><%= p.name %></a>
+        <% }) %>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Shubham Patil</p>
+        <a href="tel:7707077708">7707077708</a>
+        <a href="mailto:info@neevararealty.com">info@neevararealty.com</a>
+        <p class="footer-address">Mahantesh Nagar, Belagavi<br>Karnataka, India</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Neevara Realty. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<div class="mobile-cta">
+  <a href="tel:7707077708" class="mobile-cta-call">Call Now</a>
+  <a href="/#book-visit" class="mobile-cta-visit">Book a Visit</a>
+</div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

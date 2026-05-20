@@ -1,0 +1,157 @@
+<%- include('partials/head') %>
+
+<%- include('partials/nav') %>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <video class="hero-video" autoplay muted loop playsinline poster="/images/hero-poster.jpg">
+      <source src="/images/hero-clip.mp4" type="video/mp4">
+    </video>
+    <div class="container hero-content">
+      <span class="eyebrow">Neevara Realty</span>
+      <h1 class="hero-title">Where Every Home<br>Becomes a <em>Legacy</em>.</h1>
+      <p class="hero-sub">Premium residences in the heart of Belagavi, Karnataka</p>
+      <div class="hero-actions">
+        <a href="/#projects" class="btn btn-gold">Explore Projects</a>
+        <a href="/#book-visit" class="btn btn-outline">Book a Site Visit</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><span class="hero-stat-num" data-count="12">0</span><span class="hero-stat-label">Years of Excellence</span></div>
+        <div class="hero-stat"><span class="hero-stat-num" data-count="30">0</span><span class="hero-stat-label">Projects Delivered</span></div>
+        <div class="hero-stat"><span class="hero-stat-num" data-count="500">0</span><span class="hero-stat-label">Happy Families</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy section" id="philosophy">
+    <div class="container">
+      <span class="eyebrow">Our Philosophy</span>
+      <h2 class="section-title">Crafting Homes,<br><em>Creating Legacies</em></h2>
+      <p class="section-desc">On the surface, we build buildings. But our purpose goes deeper — to enrich the lives of people residing in our constructed homes.</p>
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="8" y="20" width="32" height="24" stroke="#C9A262" stroke-width="1.5"/><path d="M4 20L24 4L44 20" stroke="#C9A262" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Architectural Excellence</h3>
+          <p>Every structure we create is a testament to thoughtful design, maximizing space, light, and flow.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4L28 18H42L30 27L34 42L24 33L14 42L18 27L6 18H20L24 4Z" stroke="#C9A262" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Uncompromising Quality</h3>
+          <p>From foundation to finish, we use only the finest materials and most rigorous standards.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#C9A262" stroke-width="1.5"/><path d="M24 14V24L30 30" stroke="#C9A262" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Prime Locations</h3>
+          <p>We choose sites that offer the perfect balance of connectivity, nature, and community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects section" id="projects">
+    <div class="container">
+      <span class="eyebrow">Our Projects</span>
+      <h2 class="section-title">Discover <em>Exceptional</em> Living</h2>
+      <div class="project-grid">
+        <% projects.forEach(function(project, idx) { %>
+        <a href="/projects/<%= project.slug %>" class="project-card reveal" style="--idx: <%= idx %>">
+          <div class="project-card-img">
+            <% var cardImg = project.gallery && project.gallery.length ? project.gallery[0] : ''; %>
+            <div class="project-card-image"<% if (cardImg) { %> style="background-image: url('<%= cardImg %>')"<% } %>></div>
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-status <%= project.status === 'Ongoing' ? 'status-ongoing' : 'status-upcoming' %>"><%= project.status %></span>
+            <h3><%= project.name %></h3>
+            <p><%= project.type %> — <%= project.location %></p>
+            <span class="project-card-price"><%= project.priceLabel %> <%= project.price %></span>
+          </div>
+        </a>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <section class="counters section-dark">
+    <div class="container">
+      <div class="counter-grid">
+        <div class="counter-item reveal">
+          <span class="counter-num" data-target="12">0</span>
+          <span class="counter-suffix">+</span>
+          <span class="counter-label">Years of Excellence</span>
+        </div>
+        <div class="counter-item reveal">
+          <span class="counter-num" data-target="30">0</span>
+          <span class="counter-suffix">+</span>
+          <span class="counter-label">Projects Delivered</span>
+        </div>
+        <div class="counter-item reveal">
+          <span class="counter-num" data-target="500">0</span>
+          <span class="counter-suffix">+</span>
+          <span class="counter-label">Happy Families</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote section">
+    <div class="container">
+      <blockquote class="reveal">
+        <p>"We don't just construct buildings — we build the foundations for generations of memories, growth, and prosperity."</p>
+        <cite>— Shubham Patil, Neevara Realty</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="cta section-dark" id="book-visit">
+    <div class="container">
+      <span class="eyebrow">Begin Your Journey</span>
+      <h2 class="section-title">Your <em>Neevara</em> Awaits</h2>
+      <p>Step into the home you've always dreamed of. Schedule a site visit today.</p>
+      <form class="cta-form" id="ctaForm">
+        <input type="hidden" name="project" value="">
+        <div class="cta-form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <button type="submit" class="btn btn-gold">Book a Site Visit</button>
+        </div>
+        <div class="cta-form-msg" id="ctaFormMsg"></div>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact section" id="contact">
+    <div class="container">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="section-title">Let's <em>Connect</em></h2>
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <h3>Belagavi Office</h3>
+          <p>Mahantesh Nagar, Belagavi<br>Karnataka 590001</p>
+          <a href="tel:7707077708">7707077708</a>
+          <a href="mailto:info@neevararealty.com">info@neevararealty.com</a>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Site Office</h3>
+          <p>Haigreeva Meadows<br>Mahantesh Nagar, Belagavi</p>
+          <a href="tel:7707077708">7707077708</a>
+          <p class="contact-note">Open 10 AM — 6 PM · All Days</p>
+        </div>
+        <div class="contact-card reveal">
+          <h3>Shubham Patil</h3>
+          <p>Director, Neevara Realty</p>
+          <a href="tel:7707077708">7707077708</a>
+          <p class="contact-note">Available for enquiries & site visits</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

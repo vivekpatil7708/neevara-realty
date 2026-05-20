@@ -1,0 +1,283 @@
+<%- include('partials/head') %>
+
+<%- include('partials/nav') %>
+
+<main>
+  <section class="project-hero" id="projectHero">
+    <div class="project-hero-slider" id="heroSlider">
+      <% var useVideos = project.heroVideos && project.heroVideos.length; %>
+      <% var slides = useVideos ? project.heroVideos : (project.heroImages && project.heroImages.length ? project.heroImages : ['/images/hero-bg.jpg']); %>
+      <% slides.forEach(function(src, i) { %>
+      <div class="project-hero-slide <%= i === 0 ? 'active' : '' %>" data-slide="<%= i %>">
+        <% if (useVideos) { %>
+        <video class="hero-slide-video" muted loop playsinline poster="<%= project.heroImages && project.heroImages[i] ? project.heroImages[i] : '' %>">
+          <source src="<%= src %>" type="video/mp4">
+        </video>
+        <% } else { %>
+        <div class="hero-slide-img" style="background-image: url('<%= src %>')"></div>
+        <% } %>
+        <div class="project-hero-overlay"></div>
+      </div>
+      <% }) %>
+    </div>
+    <div class="project-hero-dots" id="heroDots">
+      <% slides.forEach(function(_, i) { %>
+      <button class="hero-dot <%= i === 0 ? 'active' : '' %>" data-slide="<%= i %>"></button>
+      <% }) %>
+    </div>
+    <div class="container project-hero-content">
+      <div class="project-hero-text">
+        <span class="eyebrow"><%= project.name %></span>
+        <h1><%= project.tagline || '' %></h1>
+        <p><%= project.location %></p>
+        <div class="project-hero-tags">
+          <span><%= project.type %></span>
+          <span><%= project.status %></span>
+        </div>
+      </div>
+      <div class="project-enquiry-card">
+        <h3>Quick Enquiry</h3>
+        <form id="projectEnquiryForm">
+          <input type="hidden" name="project" value="<%= project.name %>">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="tel" name="phone" placeholder="Phone Number" required>
+          <button type="submit" class="btn btn-gold btn-block">Enquire Now</button>
+        </form>
+        <div class="enquiry-msg" id="enquiryMsg"></div>
+        <p class="enquiry-contact">or call <a href="tel:<%= project.contact.phone %>"><%= project.contact.phone %></a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-stats">
+    <div class="container">
+      <div class="stats-strip">
+        <div class="stat-item"><span class="stat-val"><%= project.floors || '—' %></span><span class="stat-lbl">Floors</span></div>
+        <div class="stat-item"><span class="stat-val"><%= project.units %></span><span class="stat-lbl">Units</span></div>
+        <div class="stat-item"><span class="stat-val"><%= project.penthouse ? '2' : '—' %></span><span class="stat-lbl">Penthouses</span></div>
+        <div class="stat-item"><span class="stat-val"><%= project.builtup %></span><span class="stat-lbl">Max Built-up</span></div>
+        <div class="stat-item"><span class="stat-val"><%= project.price %></span><span class="stat-lbl">Starting Price</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-about section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image reveal">
+          <% var aboutImg = project.gallery && project.gallery.length ? project.gallery[0] : ''; %>
+          <div class="about-img"<% if (aboutImg) { %> style="background-image: url('<%= aboutImg %>')"<% } %>></div>
+        </div>
+        <div class="about-text reveal">
+          <span class="eyebrow">About</span>
+          <h2 class="section-title"><%= project.name %></h2>
+          <p><%= project.about %></p>
+          <ul class="about-highlights">
+            <% project.highlights.forEach(function(h) { %>
+            <li><%= h %></li>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <% if (project.units && project.units.length) { %>
+  <section class="project-units section-dark" id="units">
+    <div class="container">
+      <span class="eyebrow">Our Residences</span>
+      <h2 class="section-title">Choose Your <em>Home</em></h2>
+      <div class="units-grid">
+        <% project.units.forEach(function(unit) { %>
+        <div class="unit-card reveal <%= unit.featured ? 'unit-featured' : '' %>">
+          <% if (unit.featured) { %><span class="unit-badge">Most Popular</span><% } %>
+          <h3><%= unit.type %></h3>
+          <p class="unit-desc"><%= unit.description %></p>
+          <div class="unit-meta">
+            <span class="unit-size"><%= unit.size %></span>
+            <span class="unit-price"><%= unit.price %></span>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (project.floorPlans && project.floorPlans.length) { %>
+  <section class="project-floorplans section" id="floorplans">
+    <div class="container">
+      <span class="eyebrow">Floor Plans</span>
+      <h2 class="section-title">Explore the <em>Layout</em></h2>
+      <div class="floorplan-tabs">
+        <% project.floorPlans.forEach(function(fp, i) { %>
+        <button class="floorplan-tab <%= i === 0 ? 'active' : '' %>" data-tab="<%= i %>"><%= fp.name %></button>
+        <% }) %>
+      </div>
+      <div class="floorplan-display">
+        <% project.floorPlans.forEach(function(fp, i) { %>
+        <div class="floorplan-panel <%= i === 0 ? 'active' : '' %>" data-panel="<%= i %>">
+          <div class="floorplan-image-wrapper">
+            <div class="floorplan-image" style="background-image: url('<%= fp.image %>')">
+              <div class="floorplan-label"><%= fp.name %></div>
+            </div>
+            <div class="floorplan-hint">Click to view full size</div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <section class="project-amenities section-dark" id="amenities">
+    <div class="container">
+      <span class="eyebrow">Amenities</span>
+      <h2 class="section-title">Designed for <em>Luxury Living</em></h2>
+      <div class="amenities-grid">
+        <% project.amenities.forEach(function(a) { %>
+        <div class="amenity-card reveal">
+          <div class="amenity-icon">
+            <% if (a.icon === 'camera') { %><svg viewBox="0 0 48 48" fill="none"><rect x="6" y="14" width="36" height="26" rx="2" stroke="#C9A262" stroke-width="1.5"/><circle cx="24" cy="27" r="8" stroke="#C9A262" stroke-width="1.5"/><circle cx="24" cy="27" r="3" fill="#C9A262"/></svg>
+            <% } else if (a.icon === 'elevator') { %><svg viewBox="0 0 48 48" fill="none"><rect x="10" y="4" width="28" height="40" rx="2" stroke="#C9A262" stroke-width="1.5"/><path d="M20 16L24 10L28 16" stroke="#C9A262" stroke-width="1.5"/><path d="M20 32L24 38L28 32" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } else if (a.icon === 'zap') { %><svg viewBox="0 0 48 48" fill="none"><path d="M26 4L14 26H22L20 44L36 20H28L30 4H26Z" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } else if (a.icon === 'compass') { %><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="20" stroke="#C9A262" stroke-width="1.5"/><path d="M24 4V8" stroke="#C9A262" stroke-width="1.5"/><path d="M24 40V44" stroke="#C9A262" stroke-width="1.5"/><path d="M4 24H8" stroke="#C9A262" stroke-width="1.5"/><path d="M40 24H44" stroke="#C9A262" stroke-width="1.5"/><circle cx="24" cy="24" r="6" fill="#C9A262"/></svg>
+            <% } else if (a.icon === 'tree') { %><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L12 24H36L24 4Z" stroke="#C9A262" stroke-width="1.5"/><path d="M14 24L8 34H40L34 24" stroke="#C9A262" stroke-width="1.5"/><line x1="24" y1="34" x2="24" y2="44" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } else if (a.icon === 'map-pin') { %><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="18" r="14" stroke="#C9A262" stroke-width="1.5"/><path d="M24 32L24 44" stroke="#C9A262" stroke-width="1.5"/><circle cx="24" cy="18" r="5" fill="#C9A262"/></svg>
+            <% } else if (a.icon === 'truck') { %><svg viewBox="0 0 48 48" fill="none"><rect x="4" y="14" width="26" height="20" rx="2" stroke="#C9A262" stroke-width="1.5"/><rect x="24" y="14" width="20" height="16" rx="2" stroke="#C9A262" stroke-width="1.5"/><circle cx="14" cy="36" r="4" stroke="#C9A262" stroke-width="1.5"/><circle cx="36" cy="36" r="4" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } else if (a.icon === 'shield') { %><svg viewBox="0 0 48 48" fill="none"><path d="M24 4L6 12V24C6 34 14 42 24 44C34 42 42 34 42 24V12L24 4Z" stroke="#C9A262" stroke-width="1.5"/><path d="M18 24L22 28L30 20" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } else if (a.icon === 'droplet') { %><svg viewBox="0 0 48 48" fill="none"><path d="M24 4C24 4 10 22 10 30C10 37.732 16.268 44 24 44C31.732 44 38 37.732 38 30C38 22 24 4 24 4Z" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } else if (a.icon === 'sun') { %><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="8" stroke="#C9A262" stroke-width="1.5"/><path d="M24 4V8" stroke="#C9A262" stroke-width="1.5"/><path d="M24 40V44" stroke="#C9A262" stroke-width="1.5"/><path d="M4 24H8" stroke="#C9A262" stroke-width="1.5"/><path d="M40 24H44" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } else { %><svg viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="4" stroke="#C9A262" stroke-width="1.5"/></svg>
+            <% } %>
+          </div>
+          <span class="amenity-name"><%= a.name %></span>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <% var specs = project.specifications; %>
+  <% if (specs && Object.values(specs).some(s => s.length)) { %>
+  <section class="project-specs section" id="specs">
+    <div class="container">
+      <span class="eyebrow">Specifications</span>
+      <h2 class="section-title">Built to <em>Perfection</em></h2>
+      <div class="specs-grid">
+        <% Object.entries(specs).forEach(function(cat) { var catName = cat[0]; var items = cat[1]; %>
+        <% if (items.length) { %>
+        <div class="spec-card reveal">
+          <h3><%= catName %></h3>
+          <ul>
+            <% items.forEach(function(item) { %>
+            <li><%= item %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <% if (project.gallery && project.gallery.length) { %>
+  <section class="project-gallery section-dark" id="gallery">
+    <div class="container">
+      <span class="eyebrow">Gallery</span>
+      <h2 class="section-title">A Glimpse of <em>Perfection</em></h2>
+      <div class="gallery-grid">
+        <% project.gallery.forEach(function(img) { %>
+        <div class="gallery-item reveal">
+          <div class="gallery-image" style="background-image: url('<%= img %>')"></div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+  <% } %>
+
+  <section class="project-location section" id="location">
+    <div class="container">
+      <span class="eyebrow">Location</span>
+      <h2 class="section-title">Prime <em>Connectivity</em></h2>
+      <div class="location-grid">
+        <div class="location-map reveal">
+          <div class="map-svg">
+            <svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="400" rx="0" fill="#F8F4EE"/>
+              <path d="M100 80 L500 80 L500 320 L100 320 Z" stroke="#C9A262" stroke-width="1" stroke-dasharray="4 4"/>
+              <circle cx="300" cy="200" r="20" fill="#1C1D5E" stroke="#C9A262" stroke-width="2"/>
+              <circle cx="300" cy="200" r="6" fill="#C9A262"/>
+              <text x="300" y="240" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="12" font-weight="600"><%= project.name %></text>
+              <circle cx="180" cy="280" r="6" fill="#C9A262"/>
+              <text x="130" y="305" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">NH 4 — 2 min</text>
+              <circle cx="420" cy="130" r="6" fill="#C9A262"/>
+              <text x="420" y="115" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">City Centre — 5 min</text>
+              <circle cx="450" cy="300" r="6" fill="#C9A262"/>
+              <text x="450" y="325" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">Airport — 10 min</text>
+              <circle cx="200" cy="100" r="6" fill="#C9A262"/>
+              <text x="200" y="85" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">Public Garden — Walk</text>
+              <path d="M300 200 L180 280" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M300 200 L420 130" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M300 200 L450 300" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M300 200 L200 100" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+            </svg>
+          </div>
+        </div>
+        <div class="location-info reveal">
+          <h3><%= project.location %></h3>
+          <% if (project.location && project.location.mapPoints && project.location.mapPoints.length) { %>
+          <ul class="location-points">
+            <% project.location.mapPoints.forEach(function(pt) { %>
+            <li><%= pt %></li>
+            <% }) %>
+          </ul>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="project-contact section-dark" id="projectContact">
+    <div class="container">
+      <span class="eyebrow">Get in Touch</span>
+      <h2 class="section-title">Book Your <em>Site Visit</em></h2>
+      <div class="contact-project-grid">
+        <div class="contact-project-info">
+          <div class="contact-person">
+            <h3><%= project.contact.name %></h3>
+            <a href="tel:<%= project.contact.phone %>"><%= project.contact.phone %></a>
+            <a href="mailto:<%= project.contact.email %>"><%= project.contact.email %></a>
+            <p class="contact-website"><%= project.contact.website %></p>
+          </div>
+        </div>
+        <form class="contact-project-form" id="projectContactForm">
+          <input type="hidden" name="project" value="<%= project.name %>">
+          <div class="form-row">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+          </div>
+          <div class="form-row">
+            <input type="email" name="email" placeholder="Email (optional)">
+            <input type="text" name="units" placeholder="Unit Type (1 BHK / 2 BHK)">
+          </div>
+          <textarea name="message" rows="3" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn-gold">Book a Site Visit</button>
+          <div class="form-msg" id="projectFormMsg"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <% if (project.rera) { %>
+  <div class="rera-bar">
+    <div class="container">
+      <p>RERA Registration No.: <%= project.rera %></p>
+    </div>
+  </div>
+  <% } %>
+</main>
+
+<%- include('partials/footer') %>
