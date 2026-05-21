@@ -205,24 +205,31 @@
       <div class="location-grid">
         <div class="location-map reveal">
           <div class="map-svg">
-            <svg viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="600" height="400" rx="0" fill="#F8F4EE"/>
-              <path d="M100 80 L500 80 L500 320 L100 320 Z" stroke="#C9A262" stroke-width="1" stroke-dasharray="4 4"/>
-              <circle cx="300" cy="200" r="20" fill="#1C1D5E" stroke="#C9A262" stroke-width="2"/>
-              <circle cx="300" cy="200" r="6" fill="#C9A262"/>
-              <text x="300" y="240" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="12" font-weight="600"><%= project.name %></text>
-              <circle cx="180" cy="280" r="6" fill="#C9A262"/>
-              <text x="130" y="305" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">NH 4 — 2 min</text>
-              <circle cx="420" cy="130" r="6" fill="#C9A262"/>
-              <text x="420" y="115" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">City Centre — 5 min</text>
-              <circle cx="450" cy="300" r="6" fill="#C9A262"/>
-              <text x="450" y="325" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">Airport — 10 min</text>
-              <circle cx="200" cy="100" r="6" fill="#C9A262"/>
-              <text x="200" y="85" text-anchor="middle" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11">Public Garden — Walk</text>
-              <path d="M300 200 L180 280" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
-              <path d="M300 200 L420 130" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
-              <path d="M300 200 L450 300" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
-              <path d="M300 200 L200 100" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+            <svg viewBox="0 0 600 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="600" height="420" fill="#F8F4EE"/>
+              <path d="M300 60 L520 200 L520 360 L300 380 L80 360 L80 200 Z" stroke="#1C1D5E" stroke-width="0.5" fill="rgba(28,29,94,0.02)"/>
+              <path d="M160 140 L300 80 L440 140" stroke="#C9A262" stroke-width="0.5" fill="none"/>
+              <path d="M160 140 L160 320 L300 360" stroke="#C9A262" stroke-width="0.5" fill="none"/>
+              <path d="M440 140 L440 320 L300 360" stroke="#C9A262" stroke-width="0.5" fill="none"/>
+              <rect x="282" y="165" width="36" height="36" fill="#1C1D5E" stroke="#C9A262" stroke-width="1"/>
+              <text x="300" y="188" text-anchor="middle" fill="#C9A262" font-family="Outfit, sans-serif" font-size="14" font-weight="600">N</text>
+              <circle cx="130" cy="190" r="5" fill="#C9A262"/>
+              <text x="100" y="180" text-anchor="end" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11" font-weight="500">NH 4</text>
+              <text x="100" y="193" text-anchor="end" fill="rgba(28,29,94,0.4)" font-family="Outfit, sans-serif" font-size="10">2 minutes</text>
+              <circle cx="200" cy="80" r="5" fill="#C9A262"/>
+              <text x="210" y="72" text-anchor="start" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11" font-weight="500">Public Garden</text>
+              <text x="210" y="85" text-anchor="start" fill="rgba(28,29,94,0.4)" font-family="Outfit, sans-serif" font-size="10">Walking distance</text>
+              <circle cx="460" cy="120" r="5" fill="#C9A262"/>
+              <text x="445" y="112" text-anchor="end" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11" font-weight="500">City Centre</text>
+              <text x="445" y="125" text-anchor="end" fill="rgba(28,29,94,0.4)" font-family="Outfit, sans-serif" font-size="10">5 minutes</text>
+              <circle cx="490" cy="310" r="5" fill="#C9A262"/>
+              <text x="475" y="302" text-anchor="end" fill="#1C1D5E" font-family="Outfit, sans-serif" font-size="11" font-weight="500">Belagavi Airport</text>
+              <text x="475" y="315" text-anchor="end" fill="rgba(28,29,94,0.4)" font-family="Outfit, sans-serif" font-size="10">10 minutes</text>
+              <path d="M130 190 L282 183" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M200 80 L282 170" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M460 120 L318 175" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <path d="M490 310 L318 190" stroke="#C9A262" stroke-width="0.5" stroke-dasharray="3 3"/>
+              <text x="300" y="395" text-anchor="middle" fill="rgba(28,29,94,0.3)" font-family="Outfit, sans-serif" font-size="9" letter-spacing="0.2em">MAHANTESH NAGAR · BELAGAVI</text>
             </svg>
           </div>
         </div>
@@ -235,6 +242,7 @@
             <% }) %>
           </ul>
           <% } %>
+
         </div>
       </div>
     </div>

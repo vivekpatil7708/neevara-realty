@@ -1,6 +1,26 @@
 (function () {
   'use strict';
 
+  /* ===== PRELOADER ===== */
+  (function() {
+    var preloader = document.getElementById('preloader');
+    if (!preloader) return;
+    var minDuration = 4200;
+    var start = Date.now();
+    function hidePreloader() {
+      var elapsed = Date.now() - start;
+      var remaining = Math.max(0, minDuration - elapsed);
+      setTimeout(function() {
+        preloader.classList.add('hidden');
+        document.body.style.overflow = '';
+        setTimeout(function() { preloader.style.display = 'none'; }, 900);
+      }, remaining);
+    }
+    document.body.style.overflow = 'hidden';
+    if (document.readyState === 'complete') { hidePreloader(); }
+    else { window.addEventListener('load', hidePreloader); }
+  })();
+
   /* ===== CUSTOM CURSOR ===== */
   var dot = document.getElementById('cursorDot');
   var ring = document.getElementById('cursorRing');
