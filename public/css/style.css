@@ -278,6 +278,14 @@ textarea { resize: vertical; }
   height: 100%;
   object-fit: cover;
   background-color: #0F1040;
+  z-index: 0;
+}
+.hero-lightning {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 .hero-overlay {
   position: absolute;
@@ -956,6 +964,228 @@ textarea { resize: vertical; }
 /* Location */
 .location-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: center; }
 .map-svg svg { width: 100%; height: auto; }
+
+/* Expand Map */
+.expand-map {
+  position: relative;
+  cursor: pointer;
+  perspective: 1000px;
+  user-select: none;
+}
+.expand-map-inner {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #F8F4EE;
+  border: 0.5px solid rgba(28,29,94,0.08);
+  width: 340px;
+  height: 210px;
+  transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+}
+.expand-map-inner.expanded {
+  width: 540px;
+  height: 400px;
+}
+.expand-map-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,162,98,0.05) 0%, transparent 50%, rgba(28,29,94,0.05) 100%);
+}
+.expand-map-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  transition: opacity 0.3s;
+}
+.expand-map-inner.expanded .expand-map-grid { opacity: 0; }
+.expand-map-roads {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.expand-map-inner.expanded .expand-map-roads { opacity: 1; }
+.expand-map-roads svg { width: 100%; height: 100%; }
+
+/* Landmark Badges */
+.landmark-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.landmark-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 0.5px solid rgba(28,29,94,0.06);
+  border-radius: 8px;
+  background: rgba(248,244,238,0.5);
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.badge-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.badge-icon svg { width: 100%; height: 100%; }
+.badge-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.badge-name {
+  font-size: 11px;
+  font-weight: 500;
+  color: #1C1D5E;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.badge-dist {
+  font-size: 9px;
+  color: rgba(28,29,94,0.4);
+}
+.expand-map-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(42,157,111,0.4));
+  transition: filter 0.3s;
+}
+.expand-map:hover .expand-map-pin {
+  filter: drop-shadow(0 0 16px rgba(42,157,111,0.6));
+}
+.expand-map-pin-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(42,157,111,0.15);
+  pointer-events: none;
+}
+.expand-map-inner.expanded .expand-map-pin-ring {
+  animation: pinPulse 2s ease-out infinite;
+}
+@keyframes pinPulse {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+.expand-map-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(248,244,238,0.6), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.expand-map-inner.expanded .expand-map-vignette { opacity: 1; }
+.expand-map-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+.expand-map-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.expand-map-icon {
+  opacity: 1;
+  transition: opacity 0.3s;
+  color: #2A9D6F;
+}
+.expand-map-inner.expanded .expand-map-icon { opacity: 0; }
+.expand-map-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(28,29,94,0.04);
+  backdrop-filter: blur(4px);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(28,29,94,0.5);
+}
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2A9D6F;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.expand-map-bottom { position: relative; }
+.expand-map-inner.expanded .expand-map-bottom {
+  background: linear-gradient(to top, rgba(248,244,238,0.9), transparent);
+  padding-top: 40px;
+  margin: -20px;
+  padding: 40px 20px 20px;
+}
+.expand-map-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1C1D5E;
+  transition: transform 0.3s, font-size 0.3s;
+}
+.expand-map:hover .expand-map-name {
+  transform: translateX(4px);
+}
+.expand-map-coords {
+  font-size: 11px;
+  color: rgba(28,29,94,0.4);
+  font-family: 'Outfit', monospace;
+  margin-top: 2px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s, opacity 0.3s;
+}
+.expand-map-inner.expanded .expand-map-coords {
+  max-height: 30px;
+  opacity: 1;
+}
+.expand-map-line {
+  height: 1px;
+  background: linear-gradient(to right, rgba(42,157,111,0.5), rgba(42,157,111,0.2), transparent);
+  margin-top: 8px;
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+.expand-map:hover .expand-map-line { transform: scaleX(1); }
+.expand-map:not(:hover) .expand-map-line { transform: scaleX(0.3); }
+.expand-map-hint {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  color: rgba(28,29,94,0.3);
+  white-space: nowrap;
+  transition: opacity 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+.expand-map:hover .expand-map-hint:not(.expanded) { opacity: 1; transform: translateX(-50%) translateY(0); }
+.expand-map-hint { opacity: 0; transform: translateX(-50%) translateY(4px); }
+.expand-map-inner.expanded ~ .expand-map-hint { opacity: 0 !important; }
 .location-info h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
@@ -1179,4 +1409,9 @@ textarea { resize: vertical; }
 
   .project-hero-dots { bottom: 20px; }
   .hero-dot { width: 8px; height: 8px; }
+
+  .landmark-badges { gap: 6px; }
+  .landmark-badge { padding: 6px 10px; }
+  .badge-name { font-size: 10px; }
+  .badge-dist { font-size: 8px; }
 }
