@@ -212,8 +212,8 @@
                 <svg viewBox="0 0 400 320" width="100%" height="100%">
                   <defs>
                     <radialGradient id="pinGlow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stop-color="#2A9D6F" stop-opacity="0.35"/>
-                      <stop offset="100%" stop-color="#2A9D6F" stop-opacity="0"/>
+                      <stop offset="0%" stop-color="#1A1A1A" stop-opacity="0.35"/>
+                      <stop offset="100%" stop-color="#1A1A1A" stop-opacity="0"/>
                     </radialGradient>
                     <linearGradient id="roadGrad" x1="0" y1="0" x2="1" y2="0">
                       <stop offset="0%" stop-color="#C9A262" stop-opacity="0.3"/>
@@ -221,9 +221,9 @@
                       <stop offset="100%" stop-color="#C9A262" stop-opacity="0.3"/>
                     </linearGradient>
                     <radialGradient id="warmGlow" cx="50%" cy="50%" r="60%">
-                      <stop offset="0%" stop-color="#F8F4EE" stop-opacity="0"/>
-                      <stop offset="70%" stop-color="#F8F4EE" stop-opacity="0"/>
-                      <stop offset="100%" stop-color="#1C1D5E" stop-opacity="0.03"/>
+                      <stop offset="0%" stop-color="#FEFCF5" stop-opacity="0"/>
+                      <stop offset="70%" stop-color="#FEFCF5" stop-opacity="0"/>
+                      <stop offset="100%" stop-color="#000000" stop-opacity="0.03"/>
                     </radialGradient>
                   </defs>
 
@@ -234,23 +234,23 @@
                   <path d="M 0,180 Q 200,155 400,180" stroke="url(#roadGrad)" stroke-width="3" fill="none"/>
                   <path d="M 0,180 Q 200,155 400,180" stroke="#C9A262" stroke-width="1" stroke-dasharray="6 4" opacity="0.3" fill="none"/>
                   <path d="M 200,20 L 200,310" stroke="rgba(201,162,98,0.15)" stroke-width="1.5" fill="none"/>
-                  <path d="M 50,40 L 370,290" stroke="rgba(28,29,94,0.06)" stroke-width="1" fill="none"/>
-                  <path d="M 80,300 L 350,30" stroke="rgba(28,29,94,0.06)" stroke-width="1" fill="none"/>
+                  <path d="M 50,40 L 370,290" stroke="rgba(0,0,0,0.06)" stroke-width="1" fill="none"/>
+                  <path d="M 80,300 L 350,30" stroke="rgba(0,0,0,0.06)" stroke-width="1" fill="none"/>
                   <path d="M 40,180 L 200,40 L 360,180" stroke="rgba(201,162,98,0.08)" stroke-width="0.8" fill="none"/>
                   <path d="M 40,200 L 200,300 L 370,210" stroke="rgba(201,162,98,0.08)" stroke-width="0.8" fill="none"/>
 
                   <!-- Abstract building clusters -->
                   <rect x="60" y="50" width="35" height="22" rx="3" fill="rgba(201,162,98,0.08)" stroke="rgba(201,162,98,0.15)" stroke-width="0.5"/>
-                  <rect x="110" y="60" width="20" height="15" rx="2" fill="rgba(28,29,94,0.05)" stroke="rgba(28,29,94,0.08)" stroke-width="0.5"/>
+                  <rect x="110" y="60" width="20" height="15" rx="2" fill="rgba(0,0,0,0.05)" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/>
                   <rect x="280" y="210" width="45" height="28" rx="3" fill="rgba(201,162,98,0.08)" stroke="rgba(201,162,98,0.15)" stroke-width="0.5"/>
-                  <rect x="310" y="80" width="25" height="35" rx="3" fill="rgba(28,29,94,0.05)" stroke="rgba(28,29,94,0.08)" stroke-width="0.5"/>
+                  <rect x="310" y="80" width="25" height="35" rx="3" fill="rgba(0,0,0,0.05)" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/>
                   <rect x="90" y="240" width="30" height="18" rx="2" fill="rgba(201,162,98,0.06)" stroke="rgba(201,162,98,0.12)" stroke-width="0.5"/>
-                  <rect x="150" y="260" width="40" height="22" rx="3" fill="rgba(28,29,94,0.05)" stroke="rgba(28,29,94,0.08)" stroke-width="0.5"/>
+                  <rect x="150" y="260" width="40" height="22" rx="3" fill="rgba(0,0,0,0.05)" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/>
 
                   <!-- Green patches -->
-                  <circle cx="140" cy="130" r="30" fill="rgba(42,157,111,0.06)"/>
-                  <circle cx="320" cy="150" r="25" fill="rgba(42,157,111,0.05)"/>
-                  <circle cx="80" cy="280" r="20" fill="rgba(42,157,111,0.04)"/>
+                  <circle cx="140" cy="130" r="30" fill="rgba(26,26,26,0.06)"/>
+                  <circle cx="320" cy="150" r="25" fill="rgba(26,26,26,0.05)"/>
+                  <circle cx="80" cy="280" r="20" fill="rgba(26,26,26,0.04)"/>
 
                   <!-- Decorative dots -->
                   <circle cx="45" cy="185" r="1.5" fill="rgba(201,162,98,0.2)"/>
@@ -265,8 +265,8 @@
 
               <div class="expand-map-pin" id="expandPin">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#2A9D6F"/>
-                  <circle cx="12" cy="9" r="2.5" fill="#F8F4EE"/>
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#1A1A1A"/>
+                  <circle cx="12" cy="9" r="2.5" fill="#FEFCF5"/>
                 </svg>
               </div>
               <div class="expand-map-pin-ring"></div>
@@ -277,7 +277,7 @@
                 <svg width="100%" height="100%">
                   <defs>
                     <pattern id="grid-pattern" width="20" height="20" patternUnits="userSpaceOnUse">
-                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1C1D5E" stroke-width="0.3" opacity="0.15"/>
+                      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#000000" stroke-width="0.3" opacity="0.15"/>
                     </pattern>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
