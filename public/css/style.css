@@ -113,7 +113,7 @@ textarea { resize: vertical; }
   font-weight: 500;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: #FEFCF5;
+  color: #C9A262;
   margin-bottom: 16px;
   position: relative;
   padding-left: 48px;
@@ -210,7 +210,7 @@ textarea { resize: vertical; }
   font-size: 26px;
   font-weight: 600;
   letter-spacing: 0.28em;
-  color: #FEFCF5;
+  color: #C9A262;
 }
 .nav-links { display: flex; gap: 40px; }
 .nav-links a {
@@ -295,7 +295,7 @@ textarea { resize: vertical; }
   line-height: 1.08;
   margin-bottom: 20px;
 }
-.hero-title em { font-style: italic; color: #FEFCF5; }
+.hero-title em { font-style: italic; color: #C9A262; }
 .hero-sub {
   font-size: 18px;
   opacity: 0.8;
