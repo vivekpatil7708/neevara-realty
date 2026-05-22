@@ -62,6 +62,24 @@
       <h2 class="section-title">Discover <em>Exceptional</em> Living</h2>
       <div class="project-grid">
         <% projects.forEach(function(project, idx) { %>
+        <% if (project.slug === 'upcoming-project') { %>
+        <div class="project-card project-card-upcoming reveal" style="--idx: <%= idx %>">
+          <div class="project-card-img">
+            <div class="project-card-image project-card-image-upcoming">
+              <div class="upcoming-badge">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+                <span>Coming Soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <span class="project-card-status status-upcoming">Upcoming</span>
+            <h3>Upcoming Project</h3>
+            <p>Something extraordinary is coming.</p>
+            <span class="project-card-price">Belagavi, Karnataka</span>
+          </div>
+        </div>
+        <% } else { %>
         <a href="/projects/<%= project.slug %>" class="project-card reveal" style="--idx: <%= idx %>">
           <div class="project-card-img">
             <% var cardImg = project.gallery && project.gallery.length ? project.gallery[0] : ''; %>
@@ -74,6 +92,7 @@
             <span class="project-card-price"><%= project.priceLabel %> <%= project.price %></span>
           </div>
         </a>
+        <% } %>
         <% }) %>
       </div>
     </div>

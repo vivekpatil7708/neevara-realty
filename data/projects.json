@@ -129,102 +129,25 @@
     "rera": "PRM/KA/RERA/1251/309/PR/230109"
   },
   {
-    "slug": "serene-vistas",
-    "name": "Serene Vistas",
-    "tagline": "Elevate Your Everyday.",
-    "type": "Premium Villas",
+    "slug": "upcoming-project",
+    "name": "Upcoming Project",
+    "tagline": "Something Extraordinary Is Coming.",
+    "type": "Coming Soon",
     "status": "Upcoming",
-    "location": "Tilakwadi, Belagavi, Karnataka",
-    "floors": "G+2",
-    "units": "3 BHK & 4 BHK Luxury Villas",
-    "penthouse": "",
-    "price": "₹1.2 Cr*",
-    "priceLabel": "Starting from",
-    "builtup": "2400 sqft",
-    "carpet": "1800 sqft",
-    "heroImages": [
-      "/images/serene-hero-1.jpg",
-      "/images/serene-hero-2.jpg",
-      "/images/serene-hero-3.jpg"
-    ],
-    "about": "Serene Vistas offers a collection of meticulously designed luxury villas in the heart of Tilakwadi. Each villa is a sanctuary of peace, privacy, and premium living.",
-    "highlights": [
-      "G+2 independent villas",
-      "3 BHK & 4 BHK configurations",
-      "Private garden & terrace",
-      "Modular kitchen with quartz counter",
-      "Home automation ready",
-      "24x7 security & gated community"
-    ],
-    "units": [],
-    "floorPlans": [],
-    "amenities": [
-      { "name": "Gated Community", "icon": "shield" },
-      { "name": "Private Garden", "icon": "tree" },
-      { "name": "24x7 Security", "icon": "camera" },
-      { "name": "Home Automation", "icon": "zap" },
-      { "name": "Covered Parking", "icon": "truck" },
-      { "name": "Rainwater Harvesting", "icon": "droplet" },
-      { "name": "Solar Panels", "icon": "sun" },
-      { "name": "Clubhouse Access", "icon": "home" }
-    ],
-    "specifications": {
-      "Structure": [],
-      "Walls": [],
-      "Doors": [],
-      "Windows": []
-    },
-    "gallery": [],
-    "location": {
-      "address": "Tilakwadi, Belagavi, Karnataka",
-      "mapPoints": []
-    },
-    "contact": {
-      "name": "Shubham Patil",
-      "phone": "7707077708",
-      "email": "info@neevararealty.com",
-      "website": "www.neevararealty.com"
-    },
-    "rera": ""
-  },
-  {
-    "slug": "golden-acre",
-    "name": "Golden Acre",
-    "tagline": "Where Nature Meets Luxury.",
-    "type": "Premium Plots",
-    "status": "Ongoing",
-    "location": "Khanapur Road, Belagavi, Karnataka",
+    "location": "Belagavi, Karnataka",
     "floors": "",
-    "units": "Premium Residential Plots",
+    "units": "",
     "penthouse": "",
-    "price": "₹35 Lac*",
-    "priceLabel": "Per plot starting",
-    "builtup": "1200 sqft plots",
+    "price": "",
+    "priceLabel": "",
+    "builtup": "",
     "carpet": "",
-    "heroImages": [
-      "/images/golden-hero-1.jpg",
-      "/images/golden-hero-2.jpg",
-      "/images/golden-hero-3.jpg"
-    ],
-    "about": "Golden Acre presents premium residential plots on Khanapur Road, offering the perfect blend of nature and urban convenience. Build your dream home in Belagavi's most sought-after locality.",
-    "highlights": [
-      "Premium residential plots",
-      "1200 sqft and above",
-      "DTCP approved layout",
-      "Wide tar roads with footpath",
-      "Underground drainage",
-      "Street lights & landscaping"
-    ],
+    "heroImages": [],
+    "about": "We are crafting something exceptional for you. Stay tuned for our upcoming project in Belagavi — designed to elevate your living experience.",
+    "highlights": [],
     "units": [],
     "floorPlans": [],
-    "amenities": [
-      { "name": "DTCP Approved", "icon": "shield" },
-      { "name": "Wide Roads", "icon": "map-pin" },
-      { "name": "Street Lighting", "icon": "sun" },
-      { "name": "Underground Drainage", "icon": "droplet" },
-      { "name": "Water Connection", "icon": "droplet" },
-      { "name": "Park & Play Area", "icon": "tree" }
-    ],
+    "amenities": [],
     "specifications": {
       "Structure": [],
       "Walls": [],
@@ -233,11 +156,11 @@
     },
     "gallery": [],
     "location": {
-      "address": "Khanapur Road, Belagavi, Karnataka",
+      "address": "Belagavi, Karnataka",
       "mapPoints": []
     },
     "contact": {
-      "name": "Shubham Patil",
+      "name": "Neevara Realty",
       "phone": "7707077708",
       "email": "info@neevararealty.com",
       "website": "www.neevararealty.com"

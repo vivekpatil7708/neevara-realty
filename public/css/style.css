@@ -432,6 +432,30 @@ textarea { resize: vertical; }
   transition: transform 0.5s;
 }
 .project-card:hover .project-card-image { transform: scale(1.05); }
+.project-card-upcoming { cursor: default; }
+.project-card-upcoming:hover .project-card-image { transform: none; }
+.project-card-upcoming:hover { border-color: rgba(0,0,0,0.08); background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); }
+.project-card-image-upcoming {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1A1A1A 0%, #000000 100%);
+}
+.upcoming-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: #C9A262;
+  opacity: 0.8;
+}
+.upcoming-badge svg { opacity: 0.6; }
+.upcoming-badge span {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
 .project-card-body { padding: 24px; }
 .project-card-status {
   display: inline-block;
