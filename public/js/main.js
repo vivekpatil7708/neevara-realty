@@ -74,37 +74,47 @@
     });
   }
 
-  /* ===== LIGHTNING INIT ===== */
-  if (window.NeevaraLightning) {
-    window.NeevaraLightning('heroLightning', { hue: 42, speed: 1.2, intensity: 0.4, size: 1.8 });
-  }
+  /* ===== SCROLL REVEAL (Intersection Observer) ===== */
+  (function() {
+    var els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el) { obs.observe(el); });
+  })();
 
-  /* ===== SCROLL REVEAL + COUNTERS (Motion) ===== */
-  if (window.Motion) {
-    var motion = window.Motion;
-    var revealEls = document.querySelectorAll('.reveal');
-    revealEls.forEach(function(el) {
-      motion.inView(el, function() {
-        motion.animate(el, { opacity: [0, 1], y: [30, 0] }, { duration: 0.7, easing: 'ease-out' });
-        return function() {};
-      }, { amount: 0.15 });
-    });
-
-    var counterEls = document.querySelectorAll('.counter-num, .hero-stat-num');
-    counterEls.forEach(function(el) {
-      motion.inView(el, function() {
+  /* ===== COUNTER ANIMATION (Intersection Observer) ===== */
+  (function() {
+    var els = document.querySelectorAll('.counter-num, .hero-stat-num');
+    if (!els.length) return;
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
         var target = parseInt(el.getAttribute('data-count') || el.getAttribute('data-target')) || 0;
-        if (target === 0) return function() {};
-        var obj = { v: 0 };
-        motion.animate(obj, { v: target }, {
-          duration: 1.5,
-          easing: 'ease-out',
-          onUpdate: function() { el.textContent = Math.round(obj.v); }
-        });
-        return function() {};
-      }, { amount: 0.5 });
-    });
-  }
+        if (target === 0) return;
+        obs.unobserve(el);
+        var start = 0;
+        var duration = 1500;
+        var startTime = null;
+        function tick(now) {
+          if (!startTime) startTime = now;
+          var t = Math.min((now - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(start + (target - start) * eased);
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.5 });
+    els.forEach(function(el) { obs.observe(el); });
+  })();
 
   /* ===== EXPAND MAP ===== */
   (function() {
@@ -129,21 +139,27 @@
 
     container.addEventListener('click', function() {
       inner.classList.toggle('expanded');
-    });
-
-    if (window.Motion) {
-      var m = window.Motion;
       var pin = document.getElementById('expandPin');
       var coords = document.getElementById('expandCoords');
-
-      var observer = new MutationObserver(function() {
-        if (inner.classList.contains('expanded')) {
-          m.animate(pin, { scale: [0, 1], y: [-20, 0] }, { type: 'spring', stiffness: 400, damping: 20, delay: 0.3 });
-          m.animate(coords, { opacity: [0, 1], y: [-10, 0] }, { duration: 0.25, delay: 0.1 });
+      if (inner.classList.contains('expanded')) {
+        if (pin) {
+          pin.style.transform = 'scale(0) translateY(-20px)';
+          pin.style.transition = 'none';
+          pin.offsetHeight;
+          pin.style.transition = 'transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), translate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          pin.style.transform = 'scale(1) translateY(0)';
         }
-      });
-      observer.observe(inner, { attributes: true, attributeFilter: ['class'] });
-    }
+        if (coords) {
+          coords.style.opacity = '0';
+          coords.style.transform = 'translateY(-10px)';
+          coords.style.transition = 'none';
+          coords.offsetHeight;
+          coords.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+          coords.style.opacity = '1';
+          coords.style.transform = 'translateY(0)';
+        }
+      }
+    });
 
     function tilt() {
       rotX += (mouseY - rotX) * 0.08;
