@@ -16,7 +16,7 @@ app.use(express.json());
 
 const projects = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'projects.json'), 'utf-8'));
 
-app.locals.siteUrl = process.env.SITE_URL || 'http://localhost:3000';
+app.locals.siteUrl = process.env.SITE_URL || 'https://neevararealty.com';
 
 app.get('/', (req, res) => {
   res.render('index', {

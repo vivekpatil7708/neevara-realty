@@ -3,5 +3,7 @@ node_modules/
 /public/images/uploads/
 npm-debug.log
 .DS_Store
-
 *.log
+*adhar*
+*aadhar*
+*WhatsApp Image*
