@@ -37,6 +37,9 @@ app.get('/projects/:slug', (req, res) => {
 
 app.post('/contact', async (req, res) => {
   const { name, phone, email, message, project: projectName } = req.body;
+  if (!name || !phone) {
+    return res.json({ success: false, message: 'Please provide your name and phone number.' });
+  }
   if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
     return res.json({ success: true, message: 'Enquiry received. We will contact you shortly.' });
   }
@@ -45,7 +48,9 @@ app.post('/contact', async (req, res) => {
       host: process.env.EMAIL_HOST || 'smtp.gmail.com',
       port: parseInt(process.env.EMAIL_PORT || '587'),
       secure: false,
-      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS }
+      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
+      connectionTimeout: 10000,
+      socketTimeout: 10000
     });
     await transporter.sendMail({
       from: `"Neevara Realty" <${process.env.EMAIL_USER}>`,
