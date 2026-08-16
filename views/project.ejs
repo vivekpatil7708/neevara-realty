@@ -53,7 +53,7 @@
     <div class="container">
       <div class="stats-strip">
         <div class="stat-item"><span class="stat-val"><%= project.floors || '—' %></span><span class="stat-lbl">Floors</span></div>
-        <div class="stat-item"><span class="stat-val"><%= project.units %></span><span class="stat-lbl">Units</span></div>
+        <div class="stat-item"><span class="stat-val"><%= project.unitsLabel || '' %></span><span class="stat-lbl">Units</span></div>
         <div class="stat-item"><span class="stat-val"><%= project.penthouse ? '2' : '—' %></span><span class="stat-lbl">Penthouses</span></div>
         <div class="stat-item"><span class="stat-val"><%= project.builtup %></span><span class="stat-lbl">Max Built-up</span></div>
         <div class="stat-item"><span class="stat-val"><%= project.price %></span><span class="stat-lbl">Starting Price</span></div>
