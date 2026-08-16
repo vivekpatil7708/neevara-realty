@@ -87,7 +87,7 @@
           <div class="project-card-body">
             <span class="project-card-status <%= project.status === 'Ongoing' ? 'status-ongoing' : 'status-upcoming' %>"><%= project.status %></span>
             <h3><%= project.name %></h3>
-            <p><%= project.type %> — <%= project.location %></p>
+            <p><%= project.type %> — <%= typeof project.location === 'object' ? project.location.address : project.location %></p>
             <span class="project-card-price"><%= project.priceLabel %> <%= project.price %></span>
           </div>
         </a>

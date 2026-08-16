@@ -29,7 +29,7 @@
       <div class="project-hero-text">
         <span class="eyebrow"><%= project.name %></span>
         <h1><%= project.tagline || '' %></h1>
-        <p><%= project.location %></p>
+        <p><%= typeof project.location === 'object' ? project.location.address : project.location %></p>
         <div class="project-hero-tags">
           <span><%= project.type %></span>
           <span><%= project.status %></span>
