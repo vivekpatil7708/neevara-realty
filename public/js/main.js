@@ -5,7 +5,7 @@
   (function() {
     var preloader = document.getElementById('preloader');
     if (!preloader) return;
-    var minDuration = 4200;
+    var minDuration = 1900;
     var start = Date.now();
     function hidePreloader() {
       var elapsed = Date.now() - start;
