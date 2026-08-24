@@ -6,8 +6,8 @@
     "type": "Residential Apartments",
     "status": "Ongoing",
     "location": "Mahantesh Nagar, Belagavi, Karnataka",
-    "floors": "G+8",
-    "unitsLabel": "1 BHK & 2 BHK Premium Residences",
+    "floors": "G+5",
+    "unitsLabel": "2 BHK Premium Residences",
     "penthouse": "2 Exclusive Duplex Penthouses (4th+5th Floor)",
     "price": "₹52 Lac*",
     "priceLabel": "Starting from",
@@ -25,21 +25,14 @@
     ],
     "about": "To make your dream come true, Haigreeva Meadows is a fine collection of 2 BHK homes spread across a delightful property in Mahantesh Nagar. Designed to turn your wishes into your lifestyle.",
     "highlights": [
-      "G+8 prestige structure",
-      "1 BHK Classic & 2 BHK Premium residences",
+      "G+5 prestige structure",
+      "2 BHK Premium residences",
       "2 Exclusive Duplex Penthouses with private terrace",
       "Earthquake-resistant RCC structure",
       "100% Vastu compliant",
       "Garden-facing homes"
     ],
     "units": [
-      {
-        "type": "1 BHK Classic",
-        "size": "625 sqft",
-        "price": "₹52 Lac*",
-        "description": "Elegantly designed 1 BHK residences perfect for young professionals and small families. Maximum space utilization with premium finishes.",
-        "featured": false
-      },
       {
         "type": "2 BHK Premium",
         "size": "892 sqft",
@@ -121,7 +114,7 @@
       ]
     },
     "contact": {
-      "name": "Shubham Patil",
+      "name": "Neevara Realty",
       "phone": "7707077708",
       "email": "neevararealty74@gmail.com",
       "website": "www.neevararealty.com"
