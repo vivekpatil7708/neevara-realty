@@ -193,13 +193,13 @@ textarea { resize: vertical; }
   justify-content: space-between;
 }
 .nav-logo {
-  display: inline-flex;
-  align-items: center;
-}
-.nav-logo .logo-img {
-  height: 30px;
-  width: auto;
-  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  margin-right: -0.45em;
+  color: #F8F4EE;
+  white-space: nowrap;
 }
 .nav-links { display: flex; gap: 40px; }
 .nav-links a {
@@ -1544,7 +1544,7 @@ textarea { resize: vertical; }
   .counter-label { font-size: 13px; }
 
   .site-nav.scrolled { padding: 10px 0; }
-  .nav-logo .logo-img { height: 24px; }
+  .nav-logo { font-size: 20px; letter-spacing: 0.4em; margin-right: -0.4em; }
 
   .cta-form-row input { padding: 12px 14px; }
   .btn { padding: 14px 24px; font-size: 11px; }
