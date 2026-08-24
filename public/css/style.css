@@ -1,7 +1,10 @@
-/* ===== PRELOADER ===== */
+﻿/* ===== PRELOADER ===== */
 #preloader {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 99999;
   background: #0F1040;
   display: flex;
@@ -266,7 +269,10 @@ textarea { resize: vertical; }
 }
 .hero-video {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -275,7 +281,10 @@ textarea { resize: vertical; }
 }
 .hero-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, rgba(15,16,64,0.85) 0%, rgba(28,29,94,0.7) 100%);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -658,11 +667,17 @@ textarea { resize: vertical; }
 }
 .project-hero-slider {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .project-hero-slide {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #0F1040;
   opacity: 0;
   transition: opacity 1s;
@@ -682,7 +697,10 @@ textarea { resize: vertical; }
 }
 .project-hero-overlay {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, rgba(15,16,64,0.8) 0%, rgba(28,29,94,0.5) 100%);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -1040,7 +1058,10 @@ textarea { resize: vertical; }
 .gallery-item::after {
   content: '';
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0,0,0,0);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
@@ -1064,7 +1085,10 @@ textarea { resize: vertical; }
 /* Lightbox */
 .lightbox {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 10000;
   background: rgba(0,0,0,0.95);
   display: flex;
@@ -1116,19 +1140,28 @@ textarea { resize: vertical; }
 }
 .expand-map-gradient {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, rgba(201,162,98,0.05) 0%, transparent 50%, rgba(0,0,0,0.05) 100%);
 }
 .expand-map-grid {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   opacity: 0.03;
   transition: opacity 0.3s;
 }
 .expand-map-inner.expanded .expand-map-grid { opacity: 0; }
 .expand-map-roads {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -1217,7 +1250,10 @@ textarea { resize: vertical; }
 }
 .expand-map-vignette {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(to top, rgba(248,244,238,0.6), transparent 40%);
   opacity: 0;
   transition: opacity 0.4s;
