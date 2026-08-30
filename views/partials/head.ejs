@@ -1,12 +1,30 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Neevara Realty — Crafting Homes, Creating Legacies. Premium residences and luxury properties in Belagavi, Karnataka. Corporate office: Pune, Maharashtra.">
+  <meta name="description" content="<%= typeof description !== 'undefined' ? description : 'Neevara Realty â€” Crafting Homes, Creating Legacies. Premium residences and luxury properties in Belagavi, Karnataka. Corporate office: Pune, Maharashtra.' %>">
   <meta name="google-site-verification" content="jzqXWn7mAtz9KzCq4abp-sw2QuZtiy5ZTXPGOeF3W_0" />
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0F1040">
   <link rel="canonical" href="<%= typeof canonicalUrl !== 'undefined' ? canonicalUrl : siteUrl %>">
-  <title><%= typeof title !== 'undefined' ? title : 'Neevara Realty' %></title>
+  <title><%= typeof title !== 'undefined' ? title : 'Neevara Realty â€” Premium Residences in Belagavi, Karnataka' %></title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Neevara Realty">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : 'Neevara Realty â€” Premium Residences in Belagavi, Karnataka' %>">
+  <meta property="og:description" content="<%= typeof description !== 'undefined' ? description : 'Premium residences and luxury properties in Belagavi, Karnataka. Corporate office: Pune, Maharashtra.' %>">
+  <meta property="og:url" content="<%= typeof canonicalUrl !== 'undefined' ? canonicalUrl : siteUrl %>">
+  <meta property="og:image" content="<%= seo.ogImage %>">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<%= typeof title !== 'undefined' ? title : 'Neevara Realty' %>">
+  <meta name="twitter:description" content="<%= typeof description !== 'undefined' ? description : 'Premium residences and luxury properties in Belagavi, Karnataka.' %>">
+  <meta name="twitter:image" content="<%= seo.ogImage %>">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fontsource/cormorant-garamond@5/css/index.min.css">
   <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/@fontsource/outfit@5/css/index.min.css">
@@ -20,6 +38,55 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=3">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
   <link rel="manifest" href="data:application/manifest+json,{&quot;icons&quot;:[{&quot;src&quot;:&quot;/favicon-192.png?v=3&quot;,&quot;sizes&quot;:&quot;192x192&quot;,&quot;type&quot;:&quot;image/png&quot;}]}">
+
+  <!-- Structured data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Neevara Realty",
+    "url": "<%= siteUrl %>",
+    "logo": "<%= siteUrl %>/favicon-192.png",
+    "image": "<%= seo.ogImage %>",
+    "description": "Neevara Realty crafts premium residences and luxury homes in Belagavi, Karnataka. Corporate office in Pune.",
+    "telephone": "<%= seo.phone %>",
+    "email": "neevararealty74@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bizzbay Business Hub, Office No. 110, NIBM Road, Kondhwa Khurd",
+      "addressLocality": "Pune",
+      "postalCode": "411048",
+      "addressRegion": "Maharashtra",
+      "addressCountry": "IN"
+    },
+    "areaServed": ["Belagavi", "Pune"],
+    "openingHours": "Mo-Su 10:00-18:00"
+  }
+  </script>
+  <% if (typeof project !== 'undefined' && project) { %>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateListing",
+    "name": "<%= project.name %>",
+    "description": "<%= project.about %>",
+    "url": "<%= canonicalUrl %>",
+    "image": "<%= siteUrl %><%= project.gallery && project.gallery.length ? project.gallery[0] : '' %>",
+    "offers": {
+      "@type": "Offer",
+      "price": "<%= project.price || 'On Request' %>",
+      "priceCurrency": "INR"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Mahantesh Nagar",
+      "addressLocality": "Belagavi",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+  <% } %>
 </head>
 <body>
 <%- include('preloader') %>
