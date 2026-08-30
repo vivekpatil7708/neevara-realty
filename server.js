@@ -21,6 +21,7 @@ app.locals.siteUrl = process.env.SITE_URL || 'https://neevararealty.com';
 app.get('/', (req, res) => {
   res.render('index', {
     title: 'Neevara Realty — Crafting Homes, Creating Legacies',
+    canonicalUrl: `${app.locals.siteUrl}/`,
     projects
   });
 });
@@ -30,6 +31,7 @@ app.get('/projects/:slug', (req, res) => {
   if (!project) return res.status(404).render('index', { title: 'Page Not Found', projects });
   res.render('project', {
     title: `${project.name} — Neevara Realty`,
+    canonicalUrl: `${app.locals.siteUrl}/projects/${project.slug}`,
     project,
     projects
   });
